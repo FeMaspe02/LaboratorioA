@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Huawei
+ *
+ */
+module LabA {
+}
