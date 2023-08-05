@@ -60,7 +60,8 @@ public class Utente {
 		System.out.print("Inserire cognome");
 		this.cognome = sc.next();
 		
-		
+		PrintWriter pw = fm.openToWrite(fileUtenti, true);
+		pw.print(nome + "," + cognome);
 	}
 	
 	
