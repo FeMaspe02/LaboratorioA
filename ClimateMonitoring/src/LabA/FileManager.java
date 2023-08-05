@@ -10,20 +10,18 @@ public class FileManager {
 	
 	//apre un file in scrittura 
 	
-	public FileWriter openToWrite(String file, boolean append) {
-		
-		
-		FileWriter fw = null;
+	public PrintWriter openToWrite(String file, boolean append) {
+		PrintWriter pw = null;
 		
 		try {
-			fw = new FileWriter(file, append);
+			FileWriter fw = new FileWriter(file, append);
 			BufferedWriter bw = new BufferedWriter(fw);
-			//pw = new PrintWriter(bw);
+			pw = new PrintWriter(bw);
 			
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
-		return fw;
+		return pw;
 	}
 	
 	//apre un file in lettura

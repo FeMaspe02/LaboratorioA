@@ -13,8 +13,7 @@ public class ClimateMonitoring {
 		FileManager fm = new FileManager();
 		//Utente u = new Utente();
 		
-		FileWriter fw = fm.openToWrite(fileUtenti, true);
-		fw.write("prova");
+		
 		
 		//u.registrazione();
 		
