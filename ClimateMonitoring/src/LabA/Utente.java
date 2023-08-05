@@ -24,4 +24,45 @@ public class Utente {
 		pw.print("");
 	}
 	
+	// costruttore classe Utente
+	
+	public Utente(String nome, String cognome, String codiceFiscale, String postaElettronica, String userid, String password) {
+		
+		this.nome = nome;
+		this.cognome = cognome;
+		this.codiceFiscale = codiceFiscale;
+		this.postaElettronica = postaElettronica;
+		this.userid = userid;
+		this.password = password;
+		
+	}
+	
+	// check se e-mail è corretta
+	
+	public boolean checkMail(String mail) {
+		
+		boolean check = false;
+		
+		if(mail.contains("@") && mail.contains(".")) {
+			check = true;
+		}
+		
+		return check;
+	}
+	
+	
+	public void registrazione() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("REGISTRAZIONE NUOVO UTENTE /n /n");
+		System.out.print("Inserire nome: ");
+		this.nome = sc.next();
+		
+		System.out.print("Inserire cognome");
+		this.cognome = sc.next();
+		
+		
+	}
+	
+	
+	
 }
