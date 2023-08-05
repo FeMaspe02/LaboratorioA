@@ -13,8 +13,8 @@ public class Utente {
 	private FileManager fm = new FileManager();
 	
 	
-	private String fileSessione = "/ClimateMonitoring/src/LabA/File/Sessione";
-	private String fileUtenti = "/ClimateMonitoring/src/LabA/File/Utenti";
+	private String fileSessione = "C:\\Users\\Huawei\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\Sessione";
+	private String fileUtenti = "C:\\Users\\Huawei\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\Utenti";
 	
 	// svuota il file sessione. Viene chiamato all'inizio del programma, per fare si che il file sessione sia vuoto
 	//Viene riempito poi con i dati dell'utente che ha fatto login
@@ -26,7 +26,7 @@ public class Utente {
 	
 	// costruttore classe Utente
 	
-	public Utente(String nome, String cognome, String codiceFiscale, String postaElettronica, String userid, String password) {
+	/*public Utente(String nome, String cognome, String codiceFiscale, String postaElettronica, String userid, String password) {
 		
 		this.nome = nome;
 		this.cognome = cognome;
@@ -35,7 +35,7 @@ public class Utente {
 		this.userid = userid;
 		this.password = password;
 		
-	}
+	}*/
 	
 	// check se e-mail è corretta
 	
@@ -62,6 +62,8 @@ public class Utente {
 		
 		PrintWriter pw = fm.openToWrite(fileUtenti, true);
 		pw.print(nome + "," + cognome);
+		pw.flush();
+		pw.close();
 	}
 	
 	
