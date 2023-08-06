@@ -29,6 +29,7 @@ public class FileManager {
 	
 	
 	//apre un file in lettura
+	
 	public BufferedReader openToRead(String file) {
 		BufferedReader br = null;
 		

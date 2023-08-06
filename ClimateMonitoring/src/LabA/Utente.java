@@ -13,8 +13,8 @@ public class Utente {
 	private FileManager fm = new FileManager();
 	
 	
-	private String fileSessione = "C:\\Users\\Huawei\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\Sessione";
-	private String fileUtenti = "C:\\Users\\Huawei\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\Utenti";
+	private String fileSessione = "ClimateMonitoring/src/LabA.File/Sessione.txt";
+	private String fileUtenti = "ClimateMonitoring/src/LabA.File/Utenti.txt";
 	
 	//eh ma così questi hanno il path del mio computer.. non so se funziona su un altro
 	
