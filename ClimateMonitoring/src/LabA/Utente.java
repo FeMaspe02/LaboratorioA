@@ -16,6 +16,8 @@ public class Utente {
 	private String fileSessione = "C:\\Users\\Huawei\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\Sessione";
 	private String fileUtenti = "C:\\Users\\Huawei\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\Utenti";
 	
+	//eh ma così questi hanno il path del mio computer.. non so se funziona su un altro
+	
 	// svuota il file sessione. Viene chiamato all'inizio del programma, per fare si che il file sessione sia vuoto
 	//Viene riempito poi con i dati dell'utente che ha fatto login
 	
