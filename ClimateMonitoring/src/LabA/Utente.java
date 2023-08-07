@@ -12,7 +12,7 @@ public class Utente {
 	//centro di monitoraggio di afferenza
 	private FileManager fm = new FileManager();
 	
-	
+	 
 <<<<<<< HEAD
 	private String fileSessione = "C:\\Users\\david\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\Sessione";
 	private String fileUtenti = "C:\\Users\\david\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\Utenti";

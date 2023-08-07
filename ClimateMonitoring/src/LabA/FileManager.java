@@ -14,7 +14,7 @@ public class FileManager {
 	
 	public PrintWriter openToWrite(String file, boolean append) {
 		PrintWriter pw = null;
-		
+		 
 		try {
 			FileWriter fw = new FileWriter(file, append);
 			BufferedWriter bw = new BufferedWriter(fw);

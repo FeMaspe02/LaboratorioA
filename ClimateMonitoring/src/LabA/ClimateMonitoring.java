@@ -18,7 +18,7 @@ public class ClimateMonitoring {
 		//OK PIU O MENO FUNZIONA
 		AccessManager a = new AccessManager();
 		a.cercaAreaGeografica("Th");
-		
+		 
 	}
 
 }
