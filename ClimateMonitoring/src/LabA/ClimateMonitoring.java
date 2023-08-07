@@ -12,12 +12,12 @@ public class ClimateMonitoring {
 		
 		//Sto provando se le mie funzioni funzionano (hehe lol)
 		
-		//Utente u = new Utente();
-		//u.registrazione();
+		Utente u = new Utente();
+		u.registrazione();
 		
 		//OK PIU O MENO FUNZIONA
 		AccessManager a = new AccessManager();
-		a.cercaAreaGeografica("Provincetown");
+		a.cercaAreaGeografica("Plympton");
 		
 	}
 

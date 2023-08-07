@@ -26,13 +26,12 @@ public class AccessManager {
 				 
 				boolean Trovato = false;
 				int lun = Riga.length();
-				int i = 0;
-				while(Riga.charAt(i) != ' ')
-					i++;
+				int i = 8;
 				
 				while(i+Size < lun && !Trovato) {
 					if(Riga.substring(i,i+Size).equals(NomeParz)) {
 						pw.print(Riga);
+						pw.print("\n");
 						Trovato = true;
 						}
 					else
