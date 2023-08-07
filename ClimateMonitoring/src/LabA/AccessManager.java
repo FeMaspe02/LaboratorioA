@@ -1,6 +1,8 @@
 package LabA;
 import java.io.*;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class AccessManager {
 	
@@ -10,7 +12,7 @@ public class AccessManager {
 
 	//Metodo che riceve in input una string che può essere un nome di un centro di monitoraggio 
 	//o una parte di esso e restituisce TUTTI i centri di monitoraggio che contengono data stringa
-	
+	 
 	public AccessManager() {
 		
 	}
@@ -25,30 +27,35 @@ public class AccessManager {
 			do{		
 				 
 				boolean Trovato = false;
-				int lun = Riga.length();
 				int i = 0;
-				
-				while(i+Size < lun && !Trovato) {
+				String sub = Riga.substring(i,i+Size+1);
+				Pattern pattern = Pattern.compile("\\d+");
+				Matcher matcher = pattern.matcher(sub);
 					
-					String sub = Riga.substring(i,i+Size+1);
-					if(Riga.substring(i,i+Size).equals(NomeParz)) {
+					if(!matcher.find() && !Trovato) {
 						
-						pw.print(Riga);
-						pw.print("\n");
-						Trovato = true;
+						if(Riga.substring(i,i+Size).equals(NomeParz) ) {
+							
+							pw.print(Riga);
+							pw.print("\n");
+							Trovato = true;
+			
 						}
-					
-					else
-						i++;
+						
+						else
+							i++;
 					}
 				
 				Riga = br.readLine();
 				
 				}
+			
 			while(Riga!=null);
+			
 			br.close();
 			pw.flush();
 			pw.close();
 			 
 	}
+	
 }
