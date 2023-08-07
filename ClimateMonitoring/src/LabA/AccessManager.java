@@ -26,17 +26,22 @@ public class AccessManager {
 				 
 				boolean Trovato = false;
 				int lun = Riga.length();
-				int i = 8;
+				int i = 0;
 				
 				while(i+Size < lun && !Trovato) {
+					
+					String sub = Riga.substring(i,i+Size+1);
 					if(Riga.substring(i,i+Size).equals(NomeParz)) {
+						
 						pw.print(Riga);
 						pw.print("\n");
 						Trovato = true;
 						}
+					
 					else
 						i++;
 					}
+				
 				Riga = br.readLine();
 				
 				}
