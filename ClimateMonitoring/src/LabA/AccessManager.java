@@ -22,40 +22,80 @@ public class AccessManager {
 			int Size = NomeParz.length();
 			BufferedReader br = fm.openToRead(FileCentro);
 			PrintWriter pw = fm.openToWrite(FileSessione, true);
-			String Riga=br.readLine();
-			
+			String Riga = br.readLine();
+			 
 			do{		
 				 
 				boolean Trovato = false;
-				int i = 0;
-				String sub = Riga.substring(i,i+Size+1);
+				int i = 0;;
 				Pattern pattern = Pattern.compile("\\d+");
-				Matcher matcher = pattern.matcher(sub);
+				Matcher matcher = pattern.matcher(Riga.substring(0,Size));
 					
-					if(!matcher.find() && !Trovato) {
+				while(!matcher.find()) {
 						
-						if(Riga.substring(i,i+Size).equals(NomeParz) ) {
+						if(Riga.substring(i,i+Size).equals(NomeParz) && !Trovato) {
 							
-							pw.print(Riga);
-							pw.print("\n");
+							System.out.println(Riga);
 							Trovato = true;
 			
 						}
 						
-						else
+						else {
 							i++;
+							matcher = pattern.matcher(Riga.substring(i,i+Size));
+						}
 					}
 				
 				Riga = br.readLine();
 				
-				}
-			
-			while(Riga!=null);
+				}while(Riga!=null);
 			
 			br.close();
 			pw.flush();
 			pw.close();
 			 
-	}
+	}	
+	
+	public void cercaAreaGeografica(String Latitudine, String Longitudine) throws IOException {
+		
+		int SizeLat = Latitudine.length();
+		int SizeLon = Longitudine.length();
+		BufferedReader br = fm.openToRead(FileCentro);
+		PrintWriter pw = fm.openToWrite(FileSessione, true);
+		String Riga = br.readLine();
+		 
+		do{		
+			 
+			boolean TrovataLat = false;
+			int i = 0;
+			String sub = Riga.substring(i,i+SizeLat+1);
+			Pattern pattern = Pattern.compile("\\d+");
+			Matcher matcher = pattern.matcher(Riga.substring(0,1));
+				
+				while(!matcher.find()) {i++; matcher = pattern.matcher(Riga.substring(0,i));}
+
+					if(Riga.substring(i+1,i+SizeLat).equals(Latitudine) && !TrovataLat ) {{
+						
+						TrovataLat = true;
+						i = i+SizeLat;
+						System.out.println(Riga);
+		
+					}
+					
+						if(TrovataLat && Riga.substring(i,i+SizeLon).equals(Longitudine+" ")) {
+						
+						System.out.println(Riga);
+						}	
+					}
+
+			Riga = br.readLine();
+			
+			}while(Riga!=null);
+				
+		br.close();
+		pw.flush();
+		pw.close();
+		 
+}
 	
 }
