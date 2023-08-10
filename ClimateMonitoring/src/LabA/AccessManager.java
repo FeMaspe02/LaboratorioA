@@ -1,12 +1,10 @@
 package LabA;
 import java.io.*;
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class AccessManager {
 	
-	private String FileCentro = "C:\\Users\\david\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\CentroMonitoraggio.dati.txt";
+	private String FileCentro = "C:\\Users\\david\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\CentroMonitoraggio.dati.CSV";
 	private String FileSessione = "C:\\Users\\david\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\Sessione";
 	private FileManager fm = new FileManager();
 
@@ -28,10 +26,8 @@ public class AccessManager {
 				 
 				boolean Trovato = false;
 				int i = 0;;
-				Pattern pattern = Pattern.compile("\\d+");
-				Matcher matcher = pattern.matcher(Riga.substring(0,Size));
 					
-				while(!matcher.find()) {
+				while(!Riga.substring(i,i+Size).contains(";")) {
 						
 						if(Riga.substring(i,i+Size).equals(NomeParz) && !Trovato) {
 							
@@ -42,7 +38,6 @@ public class AccessManager {
 						
 						else {
 							i++;
-							matcher = pattern.matcher(Riga.substring(i,i+Size));
 						}
 					}
 				
@@ -66,25 +61,29 @@ public class AccessManager {
 		 
 		do{		
 			 
+			int cont = 0;
 			boolean TrovataLat = false;
 			int i = 0;
-			String sub = Riga.substring(i,i+SizeLat+1);
-			Pattern pattern = Pattern.compile("\\d+");
-			Matcher matcher = pattern.matcher(Riga.substring(0,1));
 				
-				while(!matcher.find()) {i++; matcher = pattern.matcher(Riga.substring(0,i));}
-
-					if(Riga.substring(i+1,i+SizeLat).equals(Latitudine) && !TrovataLat ) {{
+				while(cont < 2) {
+					
+					if(Riga.charAt(i) == ';') {cont++; i++;}
+					
+					else i++;
+					
+					}
+				
+					if(Riga.substring(i,i+SizeLat).equals(Latitudine) && !TrovataLat ) {{
 						
 						TrovataLat = true;
-						i = i+SizeLat;
-						System.out.println(Riga);
+						i = i+SizeLat+1;
 		
 					}
 					
-						if(TrovataLat && Riga.substring(i,i+SizeLon).equals(Longitudine+" ")) {
+						if(TrovataLat && Riga.substring(i,i+SizeLon).equals(Longitudine)) {
 						
 						System.out.println(Riga);
+						
 						}	
 					}
 

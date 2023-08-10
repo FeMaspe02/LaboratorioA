@@ -17,8 +17,8 @@ public class ClimateMonitoring {
 		
 		//OK PIU O MENO FUNZIONA
 		AccessManager a = new AccessManager();
-		//a.cercaAreaGeografica("set");
-		a.cercaAreaGeografica("42.35287","-72.04535");
+		a.cercaAreaGeografica("tes");
+		a.cercaAreaGeografica("42.45232","-71.137");
 		 
 	}
 
