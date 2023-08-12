@@ -12,8 +12,6 @@ public class FileManager {
 	
 	//apre un file in scrittura 
 	
-	//NB - il metodo funziona, ma non so come dargli l'indirizzo del file
-	
 	public PrintWriter openToWrite(String file, boolean append) {
 		 
     		String basePath = System.getProperty("user.dir");
