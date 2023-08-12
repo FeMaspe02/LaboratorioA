@@ -30,7 +30,7 @@ public class ClimateMonitoring {
 			System.out.print("Inserire longitudine: ");
 			String longitudine = sc.next();
 			
-			a.cercaAreaGeografica("United States");
+			a.cercaAreaGeografica(nome);
 			a.cercaAreaGeografica(latitudine,longitudine);
 			sc.close();
 	}
