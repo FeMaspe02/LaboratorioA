@@ -11,7 +11,7 @@ public class ClimateMonitoring {
 		Scanner sc = new Scanner(System.in);
 		String Scelta = null;
 		
-		while(Scelta!="terminato") {
+		do {
 			System.out.println("Digitare l'azione che si vuole compiere");
 			Scelta = sc.nextLine();
 			Scelta = Scelta.toLowerCase();
@@ -40,7 +40,7 @@ public class ClimateMonitoring {
 		 	break;
 		 	default: System.out.println("Digitare un'operazione valida");
 		 }
-		}		
+		}while(Scelta!="terminato");
 		sc.close();					
 		}
 	}
