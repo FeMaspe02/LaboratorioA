@@ -3,7 +3,7 @@ import java.io.*;
 
 public class AccessManager {
 	
-	private String FileCentro = "File/CentroMonitoraggio.dati.CSV";
+	private String FileCentro = "C:\\Users\\Desktop\\ClimateMonitoring\\File";
 	private FileManager fm = new FileManager();
 
 	public AccessManager() {
