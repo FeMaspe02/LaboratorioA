@@ -12,8 +12,8 @@ public class ClimateMonitoring {
 		
 		//Sto provando se le mie funzioni funzionano (hehe lol)
 		
-		//Utente u = new Utente();
-		//u.registrazione();
+		Utente u = new Utente();
+		u.registrazione();
 		
 		//OK PIU O MENO FUNZIONA
 		
@@ -21,7 +21,7 @@ public class ClimateMonitoring {
 			Scanner sc = new Scanner(System.in);
 			System.out.println("Ricerca per nome");
 			System.out.print("Inserire nome: ");
-			String nome = sc.nextLine();
+			//String nome = sc.nextLine();
 			
 			//System.out.println("Ricerca per coordinate geografiche");
 			//System.out.print("Inserire latitudine: ");
@@ -30,7 +30,7 @@ public class ClimateMonitoring {
 			//System.out.print("Inserire longitudine: ");
 			//String longitudine = sc.next();
 			
-			a.cercaAreaGeografica(nome);
+			//a.cercaAreaGeografica("United States");
 			//a.cercaAreaGeografica(latitudine,longitudine);
 			sc.close();
 	}

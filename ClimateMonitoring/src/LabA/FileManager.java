@@ -13,16 +13,15 @@ public class FileManager {
 	//NB - il metodo funziona, ma non so come dargli l'indirizzo del file
 	
 	public PrintWriter openToWrite(String file, boolean append) {
-		PrintWriter pw = null;
 		 
-		try {
-			FileWriter fw = new FileWriter(file, append);
-			BufferedWriter bw = new BufferedWriter(fw);
-			pw = new PrintWriter(bw);
+			//String filePath = ClimateMonitoring.class.getResource(file).getPath();
+			PrintWriter pw = null;
+			try {
+				pw = new PrintWriter(new FileWriter(file, true));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 			
-		}catch(IOException e) {
-			e.printStackTrace();
-		}
 		return pw;
 	}
 	
@@ -31,14 +30,9 @@ public class FileManager {
 	//apre un file in lettura
 	
 	public BufferedReader openToRead(String file) {
-		BufferedReader br = null;
 		
-		try {
-			FileReader fr = new FileReader(new File(file));
-			br = new BufferedReader(fr);
-		}catch(IOException e ) {
-			e.printStackTrace();
-		}
+		InputStream inputStream = ClimateMonitoring.class.getClassLoader().getResourceAsStream(file);
+		BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
 		
 		return br;
 	}

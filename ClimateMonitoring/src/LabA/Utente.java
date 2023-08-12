@@ -14,8 +14,8 @@ public class Utente {
 	
 	 
 //<<<<<<< HEAD
-	private String fileSessione = "C:\\Users\\david\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\Sessione";
-	private String fileUtenti = "C:\\Users\\david\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\Utenti";
+	private String fileSessione = "C:\\Users\\david\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\Sessione.txt";
+	private String fileUtenti = "C:\\Users\\david\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\Utenti.txt";
 //=======
 	//private String fileSessione = "ClimateMonitoring/src/LabA.File/Sessione.txt";
 	//private String fileUtenti = "ClimateMonitoring/src/LabA.File/Utenti.txt";
@@ -26,9 +26,9 @@ public class Utente {
 	// svuota il file sessione. Viene chiamato all'inizio del programma, per fare si che il file sessione sia vuoto
 	//Viene riempito poi con i dati dell'utente che ha fatto login
 	
-	public Utente() {
-		PrintWriter pw = fm.openToWrite(fileSessione, false);
-		pw.print("");
+	public Utente() throws IOException {
+		PrintWriter pw = fm.openToWrite(fileSessione,false);
+		pw.write("");
 	}
 	
 	// costruttore classe Utente
@@ -58,19 +58,20 @@ public class Utente {
 	}
 	
 	
-	public void registrazione() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("REGISTRAZIONE NUOVO UTENTE /n /n");
-		System.out.print("Inserire nome: ");
-		this.nome = sc.next();
+	public void registrazione() throws IOException {
+		try (Scanner sc = new Scanner(System.in)) {
+			System.out.println("REGISTRAZIONE NUOVO UTENTE");
+			System.out.println("\nInserire nome: ");
+			this.nome = sc.next();
+			
+			System.out.println("Inserire cognome: ");
+			this.cognome = sc.next();
+		}
 		
-		System.out.print("Inserire cognome");
-		this.cognome = sc.next();
-		
-		PrintWriter pw = fm.openToWrite(fileUtenti, true);
-		pw.print(nome + "," + cognome);
-		pw.flush();
-		pw.close();
+		PrintWriter bw = fm.openToWrite(fileUtenti,true);
+		bw.write(nome + "," + cognome);
+		bw.flush();
+		bw.close();
 	}
 	
 	
