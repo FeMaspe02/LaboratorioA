@@ -18,15 +18,16 @@ public class AccessManager {
 			int Size = NomeParz.length();
 			BufferedReader br = fm.openToRead(FileCentro);
 			String Riga = br.readLine();
-			 
+			
 			do{		
 				 
 				boolean Trovato = false;
 				int i = 0;;
+				String sub = Riga.substring(i,i+Size);
 					
-				while(!Riga.substring(i,i+Size).contains(";")) {
+				while(sub.contains(";")) {
 						
-						if(Riga.substring(i,i+Size).equals(NomeParz) && !Trovato) {
+						if(sub.toLowerCase().equals(NomeParz.toLowerCase()) && !Trovato) {
 							
 							System.out.println(Riga);
 							Trovato = true;
@@ -35,6 +36,13 @@ public class AccessManager {
 						
 						else {
 							i++;
+						}
+						
+						if(Riga.substring(i+Size+1,i+Size+Size+1).toLowerCase().equals(NomeParz.toLowerCase()) && !Trovato){
+							
+							System.out.println(Riga);
+							Trovato = true;
+							
 						}
 					}
 				

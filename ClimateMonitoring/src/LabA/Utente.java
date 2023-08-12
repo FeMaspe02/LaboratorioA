@@ -13,15 +13,15 @@ public class Utente {
 	private FileManager fm = new FileManager();
 	
 	 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 	private String fileSessione = "C:\\Users\\david\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\Sessione";
 	private String fileUtenti = "C:\\Users\\david\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\Utenti";
-=======
-	private String fileSessione = "ClimateMonitoring/src/LabA.File/Sessione.txt";
-	private String fileUtenti = "ClimateMonitoring/src/LabA.File/Utenti.txt";
+//=======
+	//private String fileSessione = "ClimateMonitoring/src/LabA.File/Sessione.txt";
+	//private String fileUtenti = "ClimateMonitoring/src/LabA.File/Utenti.txt";
 	
-	//eh ma così questi hanno il path del mio computer.. non so se funziona su un altro
->>>>>>> branch 'master' of https://github.com/FeMaspe02/LaboratorioA.git
+	//eh ma cosï¿½ questi hanno il path del mio computer.. non so se funziona su un altro
+//>>>>>>> branch 'master' of https://github.com/FeMaspe02/LaboratorioA.git
 	
 	// svuota il file sessione. Viene chiamato all'inizio del programma, per fare si che il file sessione sia vuoto
 	//Viene riempito poi con i dati dell'utente che ha fatto login
@@ -44,7 +44,7 @@ public class Utente {
 		
 	}*/
 	
-	// check se e-mail è corretta
+	// check se e-mail ï¿½ corretta
 	
 	public boolean checkMail(String mail) {
 		
