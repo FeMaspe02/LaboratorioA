@@ -3,7 +3,7 @@ import java.io.*;
 
 public class AccessManager {
 	
-	private String FileCentro = "C:\\Users\\david\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\CentroMonitoraggio.dati.CSV";
+	private String FileCentro = "LabA/File/CentroMonitoraggio.dati.CSV";
 	private FileManager fm = new FileManager();
 
 	//Metodo che riceve in input una string che puo' essere un nome di un'area di interesse 
@@ -23,11 +23,10 @@ public class AccessManager {
 				 
 				boolean Trovato = false;
 				int i = 0;;
-				String sub = Riga.substring(i,i+Size);
 					
-				while(sub.contains(";")) {
+				while(!Riga.substring(i,i+Size).contains(";")) {
 						
-						if(sub.toLowerCase().equals(NomeParz.toLowerCase()) && !Trovato) {
+						if(Riga.substring(i,i+Size).toLowerCase().equals(NomeParz.toLowerCase()) && !Trovato) {
 							
 							System.out.println(Riga);
 							Trovato = true;
