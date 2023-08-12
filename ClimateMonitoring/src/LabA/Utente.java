@@ -59,20 +59,22 @@ public class Utente {
 	
 	
 	public void registrazione() throws IOException {
-		try (Scanner sc = new Scanner(System.in)) {
+			Scanner sc = new Scanner(System.in);
 			System.out.println("REGISTRAZIONE NUOVO UTENTE");
 			System.out.println("\nInserire nome: ");
-			this.nome = sc.next();
+			nome = sc.nextLine();
 			
 			System.out.println("Inserire cognome: ");
-			this.cognome = sc.next();
-		}
-		
+			cognome = sc.nextLine();
+			sc.close();
+			
 		PrintWriter bw = fm.openToWrite(fileUtenti,true);
 		bw.write(nome + "," + cognome);
 		bw.write("\n");
 		bw.flush();
 		bw.close();
+
+		
 	}
 	
 	

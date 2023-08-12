@@ -17,6 +17,7 @@ public class AccessManager {
 			int Size = NomeParz.length();
 			BufferedReader br = fm.openToRead(FileCentro);
 			String Riga = br.readLine();
+			int c = 0;
 			
 			do{		
 				 
@@ -27,20 +28,25 @@ public class AccessManager {
 						if(Riga.substring(i,i+Size).toLowerCase().equals(NomeParz.toLowerCase()) && !Trovato) {
 							System.out.println(Riga);
 							Trovato = true;
+							c++;
 						}
 						else {
 							i++;
 						}
 						
 						if(Riga.substring(i+Size+1,i+Size+Size+1).toLowerCase().equals(NomeParz.toLowerCase()) && !Trovato){
+							if(i+Size+Size+1 >= Riga.length())
+								System.err.println("Stringa tropppo lunga, riprovare nuovamente");
 							System.out.println(Riga);
 							Trovato = true;
+							c++;
 						}
 					}
 				
 				Riga = br.readLine();
 				
 				}while(Riga!=null);
+			if (c == 0) System.out.println("Non ci sono riscontri positivi per l'input immesso");
 			br.close(); 
 	}	
 	
@@ -51,7 +57,8 @@ public class AccessManager {
 		int SizeLon = Longitudine.length();
 		BufferedReader br = fm.openToRead(FileCentro);
 		String Riga = br.readLine();
-		 
+		int c = 0;
+		
 		do{		
 			int cont = 0;
 			boolean TrovataLat = false;
@@ -68,13 +75,16 @@ public class AccessManager {
 					}
 					
 						if(TrovataLat && Riga.substring(i,i+SizeLon).equals(Longitudine)) {
+							if(i+SizeLon >= Riga.length())
+								System.err.println("Stringa tropppo lunga, riprovare nuovamente");
 						System.out.println(Riga);
+						c++;
 						}	
 					}
 
 			Riga = br.readLine();	
 			}while(Riga!=null);
-				
+		if(c == 0) System.out.println("Non ci sono riscontri positivi per l'input immesso");		
 		br.close();
 	}
 	
