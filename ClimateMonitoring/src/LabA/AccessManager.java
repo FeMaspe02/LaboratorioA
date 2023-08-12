@@ -45,8 +45,6 @@ public class AccessManager {
 				}while(Riga!=null);
 			
 			br.close();
-			pw.flush();
-			pw.close();
 			 
 	}	
 	
@@ -90,9 +88,6 @@ public class AccessManager {
 			}while(Riga!=null);
 				
 		br.close();
-		pw.flush();
-		pw.close();
-		 
-}
+	}
 	
 }
