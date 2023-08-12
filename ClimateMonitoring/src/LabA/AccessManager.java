@@ -23,25 +23,35 @@ public class AccessManager {
 				 
 				boolean Trovato = false;
 				int i = 0;;
-					
+				
+				if(i+Size-1>= Riga.length()){
+					System.err.println("Stringa tropppo lunga, riprovare nuovamente");
+					break;
+				}
+				
 				while(!Riga.substring(i,i+Size).contains(";")) {
 						if(Riga.substring(i,i+Size).toLowerCase().equals(NomeParz.toLowerCase()) && !Trovato) {
 							System.out.println(Riga);
 							Trovato = true;
 							c++;
 						}
-						else {
-							i++;
+						else {i++;}
+					}				
+						i = 0;
+						while(!(Riga.charAt(i)==';')) {i++;}
+							
+						if(i++ +Size-1 >= Riga.length()) {
+								System.err.println("Stringa tropppo lunga, riprovare nuovamente");
+								break;
 						}
 						
-						if(Riga.substring(i+Size+1,i+Size+Size+1).toLowerCase().equals(NomeParz.toLowerCase()) && !Trovato){
-							if(i+Size+Size+1 >= Riga.length())
-								System.err.println("Stringa tropppo lunga, riprovare nuovamente");
+						if(Riga.substring(i,i+Size).toLowerCase().equals(NomeParz.toLowerCase()) && !Trovato){
+							
 							System.out.println(Riga);
 							Trovato = true;
 							c++;
 						}
-					}
+					
 				
 				Riga = br.readLine();
 				
@@ -69,14 +79,23 @@ public class AccessManager {
 					else i++;
 					
 				}
+				
+				if(i+SizeLat -1 >= Riga.length()) {
+					System.err.println("Stringa tropppo lunga, riprovare nuovamente");
+					break;
+					}
+				
 					if(Riga.substring(i,i+SizeLat).equals(Latitudine) && !TrovataLat ) {{
 						TrovataLat = true;
 						i = i+SizeLat+1;
 					}
 					
-						if(TrovataLat && Riga.substring(i,i+SizeLon).equals(Longitudine)) {
-							if(i+SizeLon >= Riga.length())
+					if(i+SizeLon -1 >= Riga.length()) {
 								System.err.println("Stringa tropppo lunga, riprovare nuovamente");
+								break;
+								}
+					
+						if(TrovataLat && Riga.substring(i,i+SizeLon).equals(Longitudine)) {	
 						System.out.println(Riga);
 						c++;
 						}	
