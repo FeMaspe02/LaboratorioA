@@ -9,23 +9,24 @@ public class ClimateMonitoring {
 		AccessManager a = new AccessManager();
 		Utente u = new Utente();
 		Scanner sc = new Scanner(System.in);
-		String Scelta = null;
+		String Scelta;
 		
 		do {
 			System.out.println("Digitare l'azione che si vuole compiere");
 			Scelta = sc.nextLine();
 			Scelta = Scelta.toLowerCase();
+			
 		switch(Scelta) {
 		 	case("registrazione"):
 		 		u.registrazione();
-		 	break;
+		 		break;
 		 	case("ricerca per nome"):{
 		 		System.out.println("Ricerca per nome");
 				System.out.print("Inserire nome: ");
 				String nome = sc.nextLine();
 				a.cercaAreaGeografica(nome);
 		 	}
-		 	break;
+		 		break;
 		 	case("ricerca per coordinate"):{
 		 						System.out.println("Ricerca per coordinate geografiche");
 				System.out.print("Inserire latitudine: ");
@@ -38,9 +39,11 @@ public class ClimateMonitoring {
 				a.cercaAreaGeografica(Latitudine,Longitudine);
 		 	}
 		 	break;
-		 	default: System.out.println("Digitare un'operazione valida");
+		 	case("terminato"): Scelta = "terminato";
+		 					break;
+		 	default: if (Scelta != "terminato") System.out.println("Digitare un'operazione valida");
 		 }
-		}while(Scelta!="terminato");
+		}while(Scelta != "terminato");
 		sc.close();					
 		}
 	}
