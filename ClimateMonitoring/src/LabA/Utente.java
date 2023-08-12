@@ -12,18 +12,10 @@ public class Utente {
 	//centro di monitoraggio di afferenza
 	private FileManager fm = new FileManager();
 	
-	 
-//<<<<<<< HEAD
 	private String fileSessione = "ClimateMonitoring/src/LabA/File/Sessione.txt";
 	private String fileUtenti = "ClimateMonitoring/src/LabA/File/Utenti.txt";
-//=======
-	//private String fileSessione = "ClimateMonitoring/src/LabA.File/Sessione.txt";
-	//private String fileUtenti = "ClimateMonitoring/src/LabA.File/Utenti.txt";
-	
-	//eh ma cos� questi hanno il path del mio computer.. non so se funziona su un altro
-//>>>>>>> branch 'master' of https://github.com/FeMaspe02/LaboratorioA.git
-	
-	// svuota il file sessione. Viene chiamato all'inizio del programma, per fare si che il file sessione sia vuoto
+
+	//svuota il file sessione. Viene chiamato all'inizio del programma, per fare si che il file sessione sia vuoto
 	//Viene riempito poi con i dati dell'utente che ha fatto login
 	
 	public Utente() throws IOException {

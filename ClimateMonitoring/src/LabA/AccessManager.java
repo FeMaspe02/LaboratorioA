@@ -65,6 +65,8 @@ public class AccessManager {
 	public void cercaAreaGeografica(String Latitudine, String Longitudine) throws IOException {
 		int SizeLat = Latitudine.length();
 		int SizeLon = Longitudine.length();
+		double lat = Double.parseDouble(Latitudine);
+		double lon = Double.parseDouble(Longitudine);
 		BufferedReader br = fm.openToRead(FileCentro);
 		String Riga = br.readLine();
 		int c = 0;
@@ -85,17 +87,20 @@ public class AccessManager {
 					break;
 					}
 				
-					if(Riga.substring(i,i+SizeLat).equals(Latitudine) && !TrovataLat ) {{
+				double fileLat = Double.parseDouble(Riga.substring(i,i+SizeLat));
+					if(lat - 5 <= fileLat && fileLat <= lat +5 ) {{
 						TrovataLat = true;
-						i = i+SizeLat+1;
 					}
 					
+				while(Riga.charAt(i) != ',') i++;
+				
 					if(i+SizeLon -1 >= Riga.length()) {
 								System.err.println("Stringa tropppo lunga, riprovare nuovamente");
 								break;
 								}
 					
-						if(TrovataLat && Riga.substring(i,i+SizeLon).equals(Longitudine)) {	
+				double fileLon = Double.parseDouble(Riga.substring(i+1,i+SizeLon+1));
+						if(lon - 5 <= fileLon && fileLon <= lon +5 && TrovataLat) {	
 						System.out.println(Riga);
 						c++;
 						}	
