@@ -29,10 +29,10 @@ public class FileManager {
 	
 	//apre un file in lettura
 	
-	public BufferedReader openToRead(String file) {
+	public BufferedReader openToRead(String file) throws UnsupportedEncodingException, FileNotFoundException {
 		
-		InputStream inputStream = ClimateMonitoring.class.getClassLoader().getResourceAsStream(file);
-		BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
+		String filePath = ClimateMonitoring.class.getResource(file).getPath();
+		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), "UTF-8"));
 		
 		return br;
 	}

@@ -19,8 +19,8 @@ public class ClimateMonitoring {
 		
 		AccessManager a = new AccessManager();
 			Scanner sc = new Scanner(System.in);
-			System.out.println("Ricerca per nome");
-			System.out.print("Inserire nome: ");
+			//System.out.println("Ricerca per nome");
+			//System.out.print("Inserire nome: ");
 			//String nome = sc.nextLine();
 			
 			//System.out.println("Ricerca per coordinate geografiche");
@@ -30,7 +30,7 @@ public class ClimateMonitoring {
 			//System.out.print("Inserire longitudine: ");
 			//String longitudine = sc.next();
 			
-			//a.cercaAreaGeografica("United States");
+			a.cercaAreaGeografica("United States");
 			//a.cercaAreaGeografica(latitudine,longitudine);
 			sc.close();
 	}
