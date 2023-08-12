@@ -62,11 +62,8 @@ public class AccessManager {
 	
 	//Metodo che riceve in ingresso latitudine e longitudine e restituisce l'area di interesse con date coordinate
 	
-	public void cercaAreaGeografica(String Latitudine, String Longitudine) throws IOException {
-		int SizeLat = Latitudine.length();
-		int SizeLon = Longitudine.length();
-		double lat = Double.parseDouble(Latitudine);
-		double lon = Double.parseDouble(Longitudine);
+	public void cercaAreaGeografica(double Latitudine, double Longitudine) throws IOException {
+		
 		BufferedReader br = fm.openToRead(FileCentro);
 		String Riga = br.readLine();
 		int c = 0;
@@ -82,25 +79,15 @@ public class AccessManager {
 					
 				}
 				
-				if(i+SizeLat -1 >= Riga.length()) {
-					System.err.println("Stringa tropppo lunga, riprovare nuovamente");
-					break;
-					}
-				
-				double fileLat = Double.parseDouble(Riga.substring(i,i+SizeLat));
-					if(lat - 5 <= fileLat && fileLat <= lat +5 ) {{
+				double fileLat = Double.parseDouble(Riga.substring(i,i+3));
+					if(Latitudine - 5 <= fileLat && fileLat <= Latitudine +5 ) {{
 						TrovataLat = true;
 					}
 					
 				while(Riga.charAt(i) != ',') i++;
-				
-					if(i+SizeLon -1 >= Riga.length()) {
-								System.err.println("Stringa tropppo lunga, riprovare nuovamente");
-								break;
-								}
 					
-				double fileLon = Double.parseDouble(Riga.substring(i+1,i+SizeLon+1));
-						if(lon - 5 <= fileLon && fileLon <= lon +5 && TrovataLat) {	
+				double fileLon = Double.parseDouble(Riga.substring(i+2,i+5));
+						if(Longitudine - 5 <= fileLon && fileLon <= Longitudine +5 && TrovataLat) {	
 						System.out.println(Riga);
 						c++;
 						}	

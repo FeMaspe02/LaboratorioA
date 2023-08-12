@@ -28,15 +28,17 @@ public class ClimateMonitoring {
 		 	}
 		 		break;
 		 	case("ricerca per coordinate"):{
-		 						System.out.println("Ricerca per coordinate geografiche");
+		 		System.out.println("Ricerca per coordinate geografiche");
 				System.out.print("Inserire latitudine: ");
 				String Latitudine = sc.nextLine();
+				double lat = Double.parseDouble(Latitudine);
 				
 				System.out.print("Inserire longitudine: ");
 				String Longitudine = sc.nextLine();
+				double lon = Double.parseDouble(Longitudine);
 				
+				a.cercaAreaGeografica(lat,lon);
 				
-				a.cercaAreaGeografica(Latitudine,Longitudine);
 		 	}
 		 	break;
 		 	case("terminato"): Scelta = "terminato";
