@@ -14,8 +14,8 @@ public class Utente {
 	
 	 
 //<<<<<<< HEAD
-	private String fileSessione = "src/LabA/File/Sessione.txt";
-	private String fileUtenti = "src/LabA/File/Utenti.txt";
+	private String fileSessione = "ClimateMonitoring/src/LabA/File/Sessione.txt";
+	private String fileUtenti = "ClimateMonitoring/src/LabA/File/Utenti.txt";
 //=======
 	//private String fileSessione = "ClimateMonitoring/src/LabA.File/Sessione.txt";
 	//private String fileUtenti = "ClimateMonitoring/src/LabA.File/Utenti.txt";
