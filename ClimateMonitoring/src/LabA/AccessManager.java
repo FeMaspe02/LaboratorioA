@@ -8,7 +8,7 @@ public class AccessManager {
 	private String FileSessione = "C:\\Users\\david\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\Sessione";
 	private FileManager fm = new FileManager();
 
-	//Metodo che riceve in input una string che può essere un nome di un centro di monitoraggio 
+	//Metodo che riceve in input una string che puï¿½ essere un nome di un centro di monitoraggio 
 	//o una parte di esso e restituisce TUTTI i centri di monitoraggio che contengono data stringa
 	 
 	public AccessManager() {
@@ -19,7 +19,6 @@ public class AccessManager {
 			
 			int Size = NomeParz.length();
 			BufferedReader br = fm.openToRead(FileCentro);
-			PrintWriter pw = fm.openToWrite(FileSessione, true);
 			String Riga = br.readLine();
 			 
 			do{		
@@ -56,7 +55,6 @@ public class AccessManager {
 		int SizeLat = Latitudine.length();
 		int SizeLon = Longitudine.length();
 		BufferedReader br = fm.openToRead(FileCentro);
-		PrintWriter pw = fm.openToWrite(FileSessione, true);
 		String Riga = br.readLine();
 		 
 		do{		
