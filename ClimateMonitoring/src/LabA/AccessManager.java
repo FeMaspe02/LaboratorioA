@@ -1,15 +1,13 @@
 package LabA;
 import java.io.*;
-import java.util.*;
 
 public class AccessManager {
 	
 	private String FileCentro = "C:\\Users\\david\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\CentroMonitoraggio.dati.CSV";
-	private String FileSessione = "C:\\Users\\david\\git\\LaboratorioA\\ClimateMonitoring\\src\\LabA\\File\\Sessione";
 	private FileManager fm = new FileManager();
 
-	//Metodo che riceve in input una string che pu� essere un nome di un centro di monitoraggio 
-	//o una parte di esso e restituisce TUTTI i centri di monitoraggio che contengono data stringa
+	//Metodo che riceve in input una string che puo' essere un nome di un'area di interesse 
+	//o una parte di esso e restituisce TUTTE le aree di interesse che contengono data stringa nel loro nome
 	 
 	public AccessManager() {
 		
@@ -47,6 +45,8 @@ public class AccessManager {
 			br.close();
 			 
 	}	
+	
+	//Metodo che riceve in ingresso latitudine e longitudine e restituisce l'area di interesse con date coordinate
 	
 	public void cercaAreaGeografica(String Latitudine, String Longitudine) throws IOException {
 		
