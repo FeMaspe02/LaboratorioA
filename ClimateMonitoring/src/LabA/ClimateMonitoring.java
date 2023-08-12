@@ -19,19 +19,19 @@ public class ClimateMonitoring {
 		
 		AccessManager a = new AccessManager();
 			Scanner sc = new Scanner(System.in);
-			//System.out.println("Ricerca per nome");
-			//System.out.print("Inserire nome: ");
-			//String nome = sc.nextLine();
+			System.out.println("Ricerca per nome");
+			System.out.print("Inserire nome: ");
+			String nome = sc.nextLine();
 			
-			//System.out.println("Ricerca per coordinate geografiche");
-			//System.out.print("Inserire latitudine: ");
-			//String latitudine = sc.next();
+			System.out.println("Ricerca per coordinate geografiche");
+			System.out.print("Inserire latitudine: ");
+			String latitudine = sc.next();
 			
-			//System.out.print("Inserire longitudine: ");
-			//String longitudine = sc.next();
+			System.out.print("Inserire longitudine: ");
+			String longitudine = sc.next();
 			
 			a.cercaAreaGeografica("United States");
-			//a.cercaAreaGeografica(latitudine,longitudine);
+			a.cercaAreaGeografica(latitudine,longitudine);
 			sc.close();
 	}
 
