@@ -70,6 +70,7 @@ public class Utente {
 		
 		PrintWriter bw = fm.openToWrite(fileUtenti,true);
 		bw.write(nome + "," + cognome);
+		bw.write("\n");
 		bw.flush();
 		bw.close();
 	}

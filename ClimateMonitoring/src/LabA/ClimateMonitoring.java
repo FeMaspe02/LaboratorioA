@@ -21,7 +21,7 @@ public class ClimateMonitoring {
 			Scanner sc = new Scanner(System.in);
 			System.out.println("Ricerca per nome");
 			System.out.print("Inserire nome: ");
-			String nome = sc.nextLine();
+			String nome = sc.next();
 			
 			System.out.println("Ricerca per coordinate geografiche");
 			System.out.print("Inserire latitudine: ");
