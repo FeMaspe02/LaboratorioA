@@ -51,6 +51,12 @@ public class Utente {
 	
 	
 	public void registrazione() throws IOException {
+		
+		String s = new String("");
+		Boolean c = false;
+		/*String check = new String("");
+		Boolean controllo = false;*/
+		
 			Scanner sc = new Scanner(System.in);
 			System.out.println("REGISTRAZIONE NUOVO UTENTE");
 			System.out.println("\nInserire nome: ");
@@ -60,8 +66,18 @@ public class Utente {
 			cognome = sc.nextLine();
 			sc.close();
 			
+			System.out.println("Inserire Codice Fiscale");
+			codiceFiscale = sc.nextLine();
+			
+			while(c == false ) {
+				System.out.println("Inserire indirizzo di posta elettronica valido");
+				s = sc.nextLine();
+				c = checkMail(s);
+			}
+			postaElettronica = s;
+			
 		PrintWriter bw = fm.openToWrite(fileUtenti,true);
-		bw.write(nome + "," + cognome);
+		bw.write(nome + "," + cognome + "," + codiceFiscale + "," + postaElettronica);
 		bw.write("\n");
 		bw.flush();
 		bw.close();
