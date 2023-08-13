@@ -17,9 +17,10 @@ public class ClimateMonitoring {
 			Scelta = Scelta.toLowerCase();
 			
 		switch(Scelta) {
-		 	case("registrazione"):
+		 	case("registrazione"):{
 		 		u.registrazione();
 		 		break;
+		 		}
 		 	case("ricerca per nome"):{
 		 		System.out.println("Ricerca per nome");
 				System.out.print("Inserire nome: ");
