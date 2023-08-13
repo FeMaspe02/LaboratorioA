@@ -66,6 +66,7 @@ public class Utente {
 			cognome = sc.nextLine();
 			sc.close();
 			
+			
 			System.out.println("Inserire Codice Fiscale");
 			codiceFiscale = sc.nextLine();
 			
@@ -76,6 +77,10 @@ public class Utente {
 			}
 			postaElettronica = s;
 			
+<<<<<<< HEAD
+=======
+		//sc.close();
+>>>>>>> branch 'master' of https://github.com/FeMaspe02/LaboratorioA.git
 		PrintWriter bw = fm.openToWrite(fileUtenti,true);
 		bw.write(nome + "," + cognome + "," + codiceFiscale + "," + postaElettronica);
 		bw.write("\n");
