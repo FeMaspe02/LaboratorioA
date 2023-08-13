@@ -17,7 +17,8 @@ public class FileManager {
     		String fullPath = basePath + "/" + relativePath;
 			PrintWriter pw = null;
 			try {
-				pw = new PrintWriter(new FileWriter(fullPath, true));
+				BufferedWriter bw = new BufferedWriter(new FileWriter(fullPath, append));
+				pw = new PrintWriter(bw);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
