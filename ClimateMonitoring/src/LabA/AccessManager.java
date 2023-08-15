@@ -1,9 +1,10 @@
 package LabA;
 import java.io.*;
+import org.apache.commons.lang3.StringUtils;
 
 public class AccessManager {
 	
-	private String FileCentro = "ClimateMonitoring/src/LabA/File/CentroMonitoraggio.dati.CSV";
+	private String FileCentro = "ClimateMonitoring/bin/LabA/File/CentroMonitoraggio.dati.CSV";
 	private FileManager fm = new FileManager();
 
 	public AccessManager() {
@@ -24,13 +25,17 @@ public class AccessManager {
 				boolean Trovato = false;
 				int i = 0;;
 				
-				if(i+Size-1>= Riga.length()){
+				if(Size>= Riga.length()){
 					System.err.println("Stringa tropppo lunga, riprovare nuovamente");
 					break;
 				}
 				
 				while(!Riga.substring(i,i+Size).contains(";")) {
-						if(Riga.substring(i,i+Size).toLowerCase().equals(NomeParz.toLowerCase()) && !Trovato) {
+					
+					String s = Riga.substring(i,i+Size).toLowerCase();
+					String n = NomeParz.toLowerCase();
+					
+						if(StringUtils.equals(n,s) && !Trovato) {
 							System.out.println(Riga);
 							Trovato = true;
 							c++;

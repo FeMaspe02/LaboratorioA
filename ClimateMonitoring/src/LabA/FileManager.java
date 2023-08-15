@@ -1,5 +1,6 @@
 package LabA;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class FileManager {
 	
@@ -30,13 +31,18 @@ public class FileManager {
 	
 	//apre un file in lettura
 	
-	public BufferedReader openToRead(String file) throws UnsupportedEncodingException, FileNotFoundException {
+	public BufferedReader openToRead(String file){
 
 		    	String basePath = System.getProperty("user.dir");
 		    	String relativePath = file;
 		    	String fullPath = basePath + "/" + relativePath;
 		
-		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(fullPath), "UTF-8"));
+		    	BufferedReader br = null;
+				try {
+					br = new BufferedReader(new InputStreamReader(new FileInputStream(fullPath),StandardCharsets.UTF_8));
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				}
 		
 		return br;
 	}

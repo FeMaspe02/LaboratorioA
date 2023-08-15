@@ -1,5 +1,6 @@
 package LabA;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 public class ClimateMonitoring {
@@ -24,18 +25,19 @@ public class ClimateMonitoring {
 		 	case("ricerca per nome"):{
 		 		System.out.println("Ricerca per nome");
 				System.out.print("Inserire nome: ");
-				String nome = sc.nextLine();
+				BufferedReader br = new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8));
+				String nome = br.readLine();
 				a.cercaAreaGeografica(nome);
 		 	}
 		 		break;
 		 	case("ricerca per coordinate"):{
 		 		System.out.println("Ricerca per coordinate geografiche");
 				System.out.print("Inserire latitudine: ");
-				String Latitudine = sc.nextLine();
+				String Latitudine = sc.next();
 				double lat = Double.parseDouble(Latitudine);
 				
 				System.out.print("Inserire longitudine: ");
-				String Longitudine = sc.nextLine();
+				String Longitudine = sc.next();
 				double lon = Double.parseDouble(Longitudine);
 				
 				a.cercaAreaGeografica(lat,lon);
