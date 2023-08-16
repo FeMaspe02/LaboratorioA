@@ -14,58 +14,53 @@ public class AccessManager {
 	//o una parte di esso e restituisce TUTTE le aree di interesse che contengono data stringa nel loro nome
 	public void cercaAreaGeografica(String NomeParz) throws IOException {
 			
-			int Size = NomeParz.length();
-			String nomeparz = NomeParz.toLowerCase();
-			BufferedReader br = fm.openToRead(FileCentro);
-			String Riga = br.readLine();
-			int c = 0;
+		int Size = NomeParz.length();
+		String nomeparz = NomeParz.toLowerCase();
+		BufferedReader br = fm.openToRead(FileCentro);
+		String Riga = br.readLine();
+		int c = 0;
+		
+		do{		
 			
-			do{		
-				 
-				boolean Trovato = false;
-				int i = 0;;
+			int i = 0;
+			boolean Trovato = false;
+			
+			while(Riga.charAt(i)!= ';') {i++;}		
+			
+				String nome = Riga.substring(0,i).toLowerCase();
+				int n = ++i;
+
+			while(Riga.charAt(i) != ';') {i++;}	
+			
+				String stato = Riga.substring(n,i).toLowerCase();
 				
-				if(Size>= Riga.length()){
-					System.err.println("Stringa tropppo lunga, riprovare nuovamente");
-					break;
-				}
-				
-				while(!(Riga.charAt(i++)== ';')) {}
-					int n = i;
-					String nome = Riga.substring(0,i).toLowerCase();
-				while(!(Riga.charAt(i++)== ';')) {}	
-					String stato = Riga.substring(n,i).toLowerCase();
-					System.out.println(nome);
-					System.out.println(stato);
-					
-						/*if(nome.equals(n) && !Trovato) {
-							System.out.println(nome);
-							Trovato = true;
-							c++;
-						}
-						else {i++;}
-						
-						i = 0;
-						while(!(Riga.charAt(i)==';')) {i++;}
-							
-						if(i++ +Size-1 >= Riga.length()) {
-								System.err.println("Stringa tropppo lunga, riprovare nuovamente");
+				if(stato.equals(nomeparz)) {
+					c++;
+					System.out.println(c + " " + nome + ", " + stato);
+					Trovato = true;
+					}
+               
+				if(!Trovato) {
+					for (i = 0; i <= n - Size; i++) {
+						int j;
+						for (j = 0; j < Size; j++) {
+							if (nome.charAt(i + j) != nomeparz.charAt(j)) {
 								break;
+							}
 						}
-						
-						if(Riga.substring(i,i+Size).toLowerCase().equals(NomeParz.toLowerCase()) && !Trovato){
-							
-							System.out.println(Riga);
-							Trovato = true;
+						if (j == Size) {  // Sottostringa trovata
 							c++;
+							System.out.println(c + " " + nome + ", " + stato);
+		               
 						}
-					
+					}
+				}	
 				
-				Riga = br.readLine();*/
+				Riga = br.readLine();
 				
 				}while(Riga!=null);
-			//if (c == 0) System.out.println("Non ci sono riscontri positivi per l'input immesso");
-			//br.close(); */
+			if (c == 0) System.out.println("Non ci sono riscontri positivi per l'input immesso");
+			br.close(); 
 	}	
 	
 	//Metodo che riceve in ingresso latitudine e longitudine e restituisce l'area di interesse con date coordinate
@@ -77,26 +72,35 @@ public class AccessManager {
 		int c = 0;
 		
 		do{		
-			int cont = 0;
 			boolean TrovataLat = false;
 			int i = 0;
 			
-				while(cont < 2) {
-					if(Riga.charAt(i) == ';') {cont++; i++;}
-					else i++;
-					
-				}
+			while(Riga.charAt(i)!= ';') {i++;}		
+			
+				String nome = Riga.substring(0,i).toLowerCase();
+				int n = ++i;
+
+			while(Riga.charAt(i) != ';') {i++;}	
+		
+				String stato = Riga.substring(n,i).toLowerCase();
+				n = ++i;
+			
+			while(Riga.charAt(i) != ',') {i++;}
+				String latitudine = Riga.substring(n,i);
+			
+			n = i+2;
+			String longitudine = Riga.substring(n,Riga.length());
 				
-				double fileLat = Double.parseDouble(Riga.substring(i,i+3));
+				double fileLat = Double.parseDouble(latitudine);
 					if(Latitudine - 5 <= fileLat && fileLat <= Latitudine +5 ) {{
 						TrovataLat = true;
 					}
 					
 				while(Riga.charAt(i) != ',') i++;
 					
-				double fileLon = Double.parseDouble(Riga.substring(i+2,i+5));
+				double fileLon = Double.parseDouble(longitudine);
 						if(Longitudine - 5 <= fileLon && fileLon <= Longitudine +5 && TrovataLat) {	
-						System.out.println(Riga);
+						System.out.println(c + " " + nome + ", " + stato + ", " + latitudine + ", " + longitudine);
 						c++;
 						}	
 					}
