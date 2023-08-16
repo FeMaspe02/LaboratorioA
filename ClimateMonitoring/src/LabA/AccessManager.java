@@ -41,18 +41,11 @@ public class AccessManager {
 					}
                
 				if(!Trovato) {
-					for (i = 0; i <= n - Size; i++) {
-						int j;
-						for (j = 0; j < Size; j++) {
-							if (nome.charAt(i + j) != nomeparz.charAt(j)) {
-								break;
+					for (i = 0; i < n -1-Size; i++) {						
+							if (nome.substring(i + Size).equals(nomeparz)) {
+								System.out.println(c + " " + nome + ", " + stato);
+								c++;
 							}
-						}
-						if (j == Size) {  // Sottostringa trovata
-							c++;
-							System.out.println(c + " " + nome + ", " + stato);
-		               
-						}
 					}
 				}	
 				
