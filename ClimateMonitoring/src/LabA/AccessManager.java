@@ -1,6 +1,5 @@
 package LabA;
 import java.io.*;
-import org.apache.commons.lang3.StringUtils;
 
 public class AccessManager {
 	
@@ -16,6 +15,7 @@ public class AccessManager {
 	public void cercaAreaGeografica(String NomeParz) throws IOException {
 			
 			int Size = NomeParz.length();
+			String nomeparz = NomeParz.toLowerCase();
 			BufferedReader br = fm.openToRead(FileCentro);
 			String Riga = br.readLine();
 			int c = 0;
@@ -30,18 +30,21 @@ public class AccessManager {
 					break;
 				}
 				
-				while(!Riga.substring(i,i+Size).contains(";")) {
+				while(!(Riga.charAt(i++)== ';')) {}
+					int n = i;
+					String nome = Riga.substring(0,i).toLowerCase();
+				while(!(Riga.charAt(i++)== ';')) {}	
+					String stato = Riga.substring(n,i).toLowerCase();
+					System.out.println(nome);
+					System.out.println(stato);
 					
-					String s = Riga.substring(i,i+Size).toLowerCase();
-					String n = NomeParz.toLowerCase();
-					
-						if(StringUtils.equals(n,s) && !Trovato) {
-							System.out.println(Riga);
+						/*if(nome.equals(n) && !Trovato) {
+							System.out.println(nome);
 							Trovato = true;
 							c++;
 						}
 						else {i++;}
-					}				
+						
 						i = 0;
 						while(!(Riga.charAt(i)==';')) {i++;}
 							
@@ -58,11 +61,11 @@ public class AccessManager {
 						}
 					
 				
-				Riga = br.readLine();
+				Riga = br.readLine();*/
 				
 				}while(Riga!=null);
-			if (c == 0) System.out.println("Non ci sono riscontri positivi per l'input immesso");
-			br.close(); 
+			//if (c == 0) System.out.println("Non ci sono riscontri positivi per l'input immesso");
+			//br.close(); */
 	}	
 	
 	//Metodo che riceve in ingresso latitudine e longitudine e restituisce l'area di interesse con date coordinate
@@ -103,5 +106,10 @@ public class AccessManager {
 		if(c == 0) System.out.println("Non ci sono riscontri positivi per l'input immesso");		
 		br.close();
 	}
+	
+	public void visualizzaAreaGeografica() {
+		
+	}
+
 	
 }
