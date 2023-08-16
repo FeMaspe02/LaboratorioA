@@ -3,7 +3,7 @@ import java.io.*;
 
 public class AccessManager {
 	
-	private String FileCentro = "ClimateMonitoring/bin/LabA/File/CentroMonitoraggio.dati.CSV";
+	private String FileAree = "ClimateMonitoring/bin/LabA/File/CoordinateMonitoraggio.dati.CSV";
 	private FileManager fm = new FileManager();
 
 	public AccessManager() {
@@ -16,7 +16,7 @@ public class AccessManager {
 			
 		int Size = NomeParz.length();
 		String nomeparz = NomeParz.toLowerCase();
-		BufferedReader br = fm.openToRead(FileCentro);
+		BufferedReader br = fm.openToRead(FileAree);
 		String Riga = br.readLine();
 		int c = 0;
 		
@@ -67,7 +67,7 @@ public class AccessManager {
 	
 	public void cercaAreaGeografica(double Latitudine, double Longitudine) throws IOException {
 		
-		BufferedReader br = fm.openToRead(FileCentro);
+		BufferedReader br = fm.openToRead(FileAree);
 		String Riga = br.readLine();
 		int c = 0;
 		
