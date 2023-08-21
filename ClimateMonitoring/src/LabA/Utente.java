@@ -13,7 +13,7 @@ public class Utente {
 	private FileManager fm = new FileManager();
 	
 	private String fileSessione = "ClimateMonitoring/bin/LabA/File/Sessione.txt";
-	private String fileUtenti = "ClimateMonitoring/bin/LabA/File/utenti.txt";
+	private String fileUtenti = "ClimateMonitoring/bin/LabA/File/OperatoriRegistrati.txt";
 
 	//svuota il file sessione. Viene chiamato all'inizio del programma, per fare si che il file sessione sia vuoto
 	//Viene riempito poi con i dati dell'utente che ha fatto login
