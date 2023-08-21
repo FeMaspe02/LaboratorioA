@@ -29,7 +29,6 @@ public class AccessManager {
 			while(Riga.charAt(i)!= ';') {i++;}		
 			
 				String nome = Riga.substring(0,i).toLowerCase();
-				System.out.println(nome);
 				int n = ++i;
 				
 			while(Riga.charAt(i) != ';') {i++;}	
@@ -43,7 +42,7 @@ public class AccessManager {
 					}
                
 				if(!Trovato) {
-					for (i = 0; i < nome.length() - Size; i++) {						
+					for (i = 0; i < nome.length() - Size + 1; i++) {						
 							if (nome.substring(i,i + Size).equals(nomeparz)) {
 								System.out.println(c + " " + nome + ", " + stato);
 								c++;
