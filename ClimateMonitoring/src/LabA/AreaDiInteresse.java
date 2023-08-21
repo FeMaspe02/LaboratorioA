@@ -18,26 +18,19 @@ public class AreaDiInteresse {
 	 private int MassaDeiGhiacciai;
 
 	 
-	 public AreaDiInteresse (String nome,String stato,Double latitudine,Double longitudine, int Vento, int Umidità, int Pressione, int Temperatura,int Precipitazioni,int AltitudineDeiGhiacciai,int MassaDeiGhiacciai) {
+	 public AreaDiInteresse (String nome,String stato,Double latitudine,Double longitudine) {
 		 this.nome = nome;
 		 this.stato = stato;
 		 this.latitudine = latitudine;
 		 this.longitudine = longitudine; 
-		 this.Vento = Vento;
-		 this.Umidità = Umidità;
-		 this.Pressione = Pressione;
-		 this.Temperatura = Temperatura;
-		 this.Precipitazioni = Precipitazioni;
-		 this.AltitudineDeiGhiacciai = AltitudineDeiGhiacciai;
-		 this.MassaDeiGhiacciai = MassaDeiGhiacciai;
 	 }
 	 
 	 
-	 public void visualizzaAreaGeografica(String nome, int n) throws IOException {
-		 AccessManager a = new AccessManager();
-			LinkedList<AreaDiInteresse> lista = a.cercaAreaGeografica(nome);
-			AreaDiInteresse area = lista.get(n);
-			System.out.print(area.Vento);
-	 }
-	 
+	// public void visualizzaAreaGeografica(String nome, int n) throws IOException {
+		// AccessManager a = new AccessManager();
+			//LinkedList<AreaDiInteresse> lista = a.cercaAreaGeografica(nome);
+			//AreaDiInteresse area = lista.get(n);
+			//System.out.print(area.Vento);
+	 //}
+
 }
